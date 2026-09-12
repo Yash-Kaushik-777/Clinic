@@ -2,7 +2,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { Route, Router as WouterRouter, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
@@ -10,16 +10,19 @@ import { DigitalDentistryPage, PreventiveCarePage, SmileDesignPage } from "./pag
 
 
 function Router() {
+  const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
   return (
-    <Switch>
+    <WouterRouter base={basePath}>
+      <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/smile-design"} component={SmileDesignPage} />
       <Route path={"/preventive-care"} component={PreventiveCarePage} />
       <Route path={"/digital-dentistry"} component={DigitalDentistryPage} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
-      <Route component={NotFound} />
-    </Switch>
+        <Route component={NotFound} />
+      </Switch>
+    </WouterRouter>
   );
 }
 

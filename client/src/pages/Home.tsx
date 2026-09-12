@@ -24,6 +24,8 @@ import {
 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
+const asset = (name: string) => `${import.meta.env.BASE_URL}assets/${name}`;
+
 const services = [
   {
     number: "01",
@@ -155,7 +157,7 @@ export default function Home() {
 
       <motion.header className="site-header" style={{ opacity: 1, y: 0 }}>
         <button className="brand-lockup" aria-label="Luminara Clinic home" onClick={() => goTo("top")}>
-          <img src="/manus-storage/luminara-mark_021dca97.png" alt="" className="brand-mark" />
+          <img src={asset("luminara-mark.png")} alt="" className="brand-mark" />
           <span className="brand-name">LUMINARA</span>
           <span className="brand-divider" />
           <span className="brand-subtitle">CLINIC</span>
@@ -203,15 +205,15 @@ export default function Home() {
           <motion.div className="device-stage-wordmark" style={{ opacity: stageWordOpacity }}>LUMINARA</motion.div>
           <motion.div className="device-stage-cable" style={{ rotate: stageCableRotate }} aria-hidden="true"><span /></motion.div>
           <motion.div className="laptop-stage" style={{ scale: laptopScale, y: laptopY, rotateX: laptopRotateX, rotateZ: laptopRotateZ, rotateY: laptopCursorRotateY, opacity: laptopOpacity }} onPointerMove={handleLaptopPointerMove} onPointerLeave={handleLaptopPointerLeave}>
-                          <img className="laptop-stage-render" src="/manus-storage/luminara-macbook-stage_edba3a47.png" alt="Premium silver MacBook-style laptop displaying the Luminara clinic" />
+                          <img className="laptop-stage-render" src={asset("luminara-macbook-stage.png")} alt="Premium silver MacBook-style laptop displaying the Luminara clinic" />
 
             <div className="laptop-display">
               <div className="laptop-camera" />
               <div className="laptop-screen">
                 <div className="screen-grid" />
-                <div className="screen-nav"><span className="screen-mini-brand"><img src="/manus-storage/luminara-mark_021dca97.png" alt="" />LUMINARA</span><span>CARE</span><span>APPROACH</span><span>VISIT</span></div>
+                <div className="screen-nav"><span className="screen-mini-brand"><img src={asset("luminara-mark.png")} alt="" />LUMINARA</span><span>CARE</span><span>APPROACH</span><span>VISIT</span></div>
                 <div className="screen-copy"><p>CLINIC / 01</p><h2>Your smile,<br /><em>in full dimension.</em></h2><button onClick={() => setAppointmentOpen(true)}>Book a visit <ArrowRight size={11} /></button></div>
-                <div className="screen-art"><img src="/manus-storage/luminara-hero-clarity-portrait_3ae596b3.jpg" alt="" /><span /><i /></div>
+                <div className="screen-art"><img src={asset("luminara-hero-clarity-portrait.jpg")} alt="" /><span /><i /></div>
               </div>
             </div>
             <div className="laptop-hinge" />
@@ -274,7 +276,7 @@ export default function Home() {
           <motion.div className="orbit orbit-a" />
           <motion.div className="orbit orbit-b" />
           <motion.div className="hero-art-card" whileHover={{ rotateY: -5, rotateX: 4, y: -6 }} transition={{ duration: 0.35 }}>
-            <img src="/manus-storage/luminara-hero-clarity-portrait_3ae596b3.jpg" alt="Pearlescent clinic sculpture with a cobalt orbital ribbon" />
+            <img src={asset("luminara-hero-clarity-portrait.jpg")} alt="Pearlescent clinic sculpture with a cobalt orbital ribbon" />
           </motion.div>
         </motion.div>
 
@@ -312,7 +314,7 @@ export default function Home() {
               animate={{ rotateY: activeService === 2 ? -8 : 0, rotateX: activeService === 0 ? 4 : 0, y: activeService === 1 ? -9 : 0, scale: activeService === 2 ? 1.035 : 1 }}
               transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
             >
-              <img src="/manus-storage/luminara-service-scanner_736747c3.jpg" alt="Translucent blue diagnostic tooth scan" />
+              <img src={asset("luminara-service-scanner.jpg")} alt="Translucent blue diagnostic tooth scan" />
               <span className="frame-corner corner-a" /><span className="frame-corner corner-b" /><span className="frame-corner corner-c" /><span className="frame-corner corner-d" />
               <div className="scan-cross scan-cross-h" /><div className="scan-cross scan-cross-v" />
             </motion.div>
@@ -350,7 +352,7 @@ export default function Home() {
           <button className="text-cta dark-text-cta" onClick={() => goTo("visit")}><span>How your visit works</span><ArrowDownRight size={18} /></button>
         </div>
         <motion.div className="portrait-wrap" style={{ y: portraitDrift }} initial={{ opacity: 0, rotate: 5 }} whileInView={{ opacity: 1, rotate: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 0.85, ease: [0.23, 1, 0.32, 1] }}>
-          <img src="/manus-storage/luminara-care-portrait_95e298aa.jpg" alt="Dentist in a luminous contemporary clinic" />
+          <img src={asset("luminara-care-portrait.jpg")} alt="Dentist in a luminous contemporary clinic" />
           <div className="portrait-diagnostic-frame" aria-hidden="true"><span /><span /><span /><span /></div>
           <div className="portrait-orbit" />
         </motion.div>
@@ -401,7 +403,7 @@ export default function Home() {
       </section>
 
       <footer className="site-footer">
-        <div className="footer-top"><button className="brand-lockup footer-brand" onClick={() => goTo("top")}><img src="/manus-storage/luminara-mark_021dca97.png" alt="" className="brand-mark" /><span className="brand-name">LUMINARA</span></button><a href="#top">Back to top <ArrowUpRightIcon /></a></div>
+        <div className="footer-top"><button className="brand-lockup footer-brand" onClick={() => goTo("top")}><img src={asset("luminara-mark.png")} alt="" className="brand-mark" /><span className="brand-name">LUMINARA</span></button><a href="#top">Back to top <ArrowUpRightIcon /></a></div>
         <div className="footer-main"><p>Dental wellness made personal, precise, and beautifully clear.</p><div><span>CLARITY, GUIDED.</span><span>© 2026 LUMINARA CLINIC</span></div></div>
       </footer>
 

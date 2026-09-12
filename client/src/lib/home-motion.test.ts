@@ -13,7 +13,7 @@ describe("homepage motion contracts", () => {
   });
 
   it("keeps the laptop render centered and readable", () => {
-    expect(homeSource).toContain("luminara-macbook-stage_edba3a47.png");
+    expect(homeSource).toContain("luminara-macbook-stage.png");
     expect(styleSource).toContain(".laptop-stage-render { left:0; top:0; width:100%; height:100%; opacity:1;");
     expect(styleSource).toContain(".laptop-stage { width:min(82vw,1080px);");
   });
